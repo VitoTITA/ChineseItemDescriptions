@@ -16,7 +16,7 @@ dotnet build './ChineseItemDescriptions.csproj' -c Release "-p:GameDir=$gameDir"
 安装时，在模组目录准备符合官方格式的 `manifest.xml`，将 `ChineseItemDescriptions.dll` 列入 `Assemblies`，并在 `Localization/zh.csv` 中填写自己的文案。下面是一行示例。
 
 ```csv
-kitchen_knife_desc,这是一把刀
+kitchen_knife_desc,一把不锈钢刀具。请置于儿童以及心怀鬼胎的上层区家庭主妇接触不到的地方。
 ```
 
 在游戏主菜单启用模组后重启。更新文案时，用 UTF-8 保存 CSV 并重启游戏。更换物品映射则需要编辑 `ModEntry.cs` 并重新构建。
