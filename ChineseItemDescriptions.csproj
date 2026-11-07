@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GameDir Condition="'$(GameDir)' == ''">$(MSBuildThisFileDirectory)../..</GameDir>
+    <GameManagedDir>$(GameDir)/Probably Stolen_Data/Managed</GameManagedDir>
+    <ModInstallDir>$(GameDir)/Mods/ChineseItemDescriptions</ModInstallDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="tests/**/*.cs" />
+    <Reference Include="Assembly-CSharp" HintPath="$(GameManagedDir)/Assembly-CSharp.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(GameManagedDir)/0Harmony.dll" Private="false" />
+  </ItemGroup>
+  <Target Name="InstallModDll" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModInstallDir)" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

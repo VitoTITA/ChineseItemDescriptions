@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <!-- 游戏自带 Harmony 在独立测试进程中使用自身生成的补丁元数据。 -->
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <GameManagedDir>$(MSBuildThisFileDirectory)../../../Probably Stolen_Data/Managed</GameManagedDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <RuntimeHostConfigurationOption Include="MonoMod.DMDType" Value="cecil" />
+    <Compile Include="../ModEntry.cs" />
+    <Reference Include="0Harmony" HintPath="$(GameManagedDir)/0Harmony.dll" />
+  </ItemGroup>
+</Project>

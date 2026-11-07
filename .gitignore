@@ -1,0 +1,13 @@
+# .NET 和编辑器生成的文件
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# 本机设置、构建结果和创意工坊上传配置
+.env
+.env.*
+*.dll
+*.pdb
+*.vdf
